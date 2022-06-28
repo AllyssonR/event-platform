@@ -1,9 +1,13 @@
+import { ApolloProvider } from '@apollo/client'
 import { Event } from './Pages/Event'
-
+import { client } from './lib/apollo'
+import { Router } from './Router'
 export function App() {
   return (
     <>
-      <Event />
+      <ApolloProvider client={client}>
+        <Router />
+      </ApolloProvider>
     </>
   )
 }
